@@ -43,3 +43,45 @@ pm2 startup
 sudo systemctl enable pm2-root
 
 pm2 save
+
+#### after that create backend tg and loadbalncer and check your loadbalncer is giving hello response or not 
+
+
+---------------------------------- FrontEnd---------------------------------------
+
+-------Step-1-------install dependencies ------
+ ### Frontend deploy process ###
+git clone https://github.com/CloudTechDevOps/2nd10WeeksofCloudOps-main.git
+   
+checkout client cd client 
+
+edit the config.js
+
+vi client/src/pages/config.js
+  
+const API_BASE_URL = "http://api.narni.co.in";
+ 
+in above line change to your backend loadbalncer url
+const API_BASE_URL = "http://backend-loadbalancer-url";
+
+sudo dnf install -y nodejs
+sudo yum install httpd
+sudo systemctl start httpd
+sudo systemctl enable httpd
+
+12. then go to client directory 
+13.run below commands
+
+****(Use npm run build:
+When preparing the app for deployment (e.g., to a server or hosting service like AWS, Netlify, or Vercel).
+Use npm start:
+During development or to start the app in production (for backend apps).)*****
+
+npm install 
+npm run build
+sudo cp -r build/* /var/www/html
+
+your frontend part is completed 
+
+### #### after that create frontend tg and loadbalncer and check your loadbalncer is giving project output along with books 
+28. add the books 
